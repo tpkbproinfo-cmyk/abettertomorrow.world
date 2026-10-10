@@ -273,6 +273,16 @@ section{padding-block:clamp(56px,8vw,96px)}
 .officials p{color:var(--cream-dim);margin-top:8px;max-width:58ch}
 .officials .eyebrow{color:#E7B85C}
 
+.goals{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.goals li{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:6px;align-content:start}
+.goals .gnum{font-family:var(--display);font-weight:700;font-size:2.4rem;line-height:1;color:var(--leaf);font-variant-numeric:tabular-nums}
+.goals li:nth-child(4n+2) .gnum{color:var(--gold)}
+.goals li:nth-child(4n+3) .gnum{color:var(--rust)}
+.goals b{font-family:var(--display);font-weight:600;line-height:1.3}
+.goals li>span:last-child{color:var(--muted);font-size:.9rem}
+@media (max-width:900px){.goals{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:460px){.goals{grid-template-columns:1fr}}
+
 footer{background:var(--navy);color:var(--cream-dim);padding-block:36px;font-size:.92rem}
 footer .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center}
 footer .slogan{font-family:var(--display);color:var(--cream);font-weight:500;letter-spacing:.04em}
@@ -398,6 +408,17 @@ footer .slogan{font-family:var(--display);color:var(--cream);font-weight:500;let
       <li><b>Services for District 1 residents</b><span>Tutoring, food, senior delivery, benefits help and job pathways in Intercession City and Campbell City, without new county spending.</span></li>
       <li><b>Trusted partners, not duplication</b><span>Established agencies reach residents through the hub, so existing public and nonprofit programs go further.</span></li>
     </ul>
+  </div>
+</section>
+
+<section id="goals" class="band" aria-labelledby="h-goals">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Year-one goals</p>
+      <h2 id="h-goals">What we commit to in our first year</h2>
+      <p class="lede">The building is small, so we are starting focused. These are our targets for the first full year after the hub opens.</p>
+    </div>
+    <ul class="goals"><li><span class="gnum">10</span><b>students tutored every week</b><span>Vanguard Scholars after-school program</span></li><li><span class="gnum">20</span><b>homebound seniors receiving food deliveries every week</b><span>Last-mile senior delivery</span></li><li><span class="gnum">20</span><b>young adults trained and placed in jobs</b><span>Through our workforce partners</span></li><li><span class="gnum">4</span><b>community outreach events</b><span>Health fair, backpacks, tax help and holiday toys</span></li><li><span class="gnum">4</span><b>homes with curb appeal restored</b><span>Veteran-led service crews</span></li><li><span class="gnum">1</span><b>community garden planted</b><span>Youth horticulture program</span></li><li><span class="gnum">2</span><b>home buyer classes</b><span>Homeownership counseling</span></li><li><span class="gnum">2</span><b>financial literacy classes</b><span>For families and young adults</span></li></ul>
   </div>
 </section>
 
