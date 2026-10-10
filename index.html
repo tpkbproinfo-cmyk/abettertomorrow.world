@@ -227,6 +227,52 @@ section{padding-block:clamp(56px,8vw,96px)}
 .leader p{color:var(--muted);font-size:.97rem;border-top:1px solid var(--line);padding-top:14px}
 @media (max-width:900px){.team{grid-template-columns:1fr}}
 
+/* need */
+.need-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;display:grid;gap:8px;align-content:start}
+.stat .num{font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,4.5vw,3rem);line-height:1;color:var(--rust);font-variant-numeric:tabular-nums}
+.stat:nth-child(2) .num{color:var(--gold)}
+.stat:nth-child(3) .num{color:var(--leaf)}
+.stat b{font-family:var(--display);font-weight:600}
+.stat p{color:var(--muted);font-size:.95rem}
+.stat small{color:var(--muted);font-size:.78rem}
+.stat small a{color:inherit}
+@media (max-width:860px){.need-grid{grid-template-columns:1fr}}
+/* county */
+.county{background:var(--navy);color:var(--cream)}
+.county .eyebrow{color:#E7B85C}
+.county .lede{color:var(--cream-dim)}
+.gets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 28px;list-style:none;margin:0;padding:0}
+.gets li{padding:18px 0;border-top:1px solid rgba(245,239,223,.18);display:grid;gap:6px;align-content:start}
+.gets b{font-family:var(--display);font-weight:600;font-size:1.08rem}
+.gets span{color:var(--cream-dim);font-size:.95rem}
+.gets .big{font-family:var(--display);font-weight:700;color:#E7B85C;font-size:1.6rem;line-height:1}
+@media (max-width:860px){.gets{grid-template-columns:1fr}}
+/* accountability */
+.acct{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,40px)}
+.acct h3{margin-bottom:12px}
+.facts{margin:0;display:grid;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.facts div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line)}
+.facts div:last-child{border-bottom:0}
+.facts dt{font-weight:500}
+.facts dd{margin:0;font-variant-numeric:tabular-nums}
+.pill{display:inline-block;font-family:var(--display);font-size:.74rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.pill.ok{background:var(--leaf-soft);color:var(--leaf)}
+.pill.wait{background:color-mix(in srgb,var(--gold) 18%,transparent);color:var(--gold)}
+.commit{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.commit li{padding:14px 0 14px 30px;border-top:1px solid var(--line);position:relative}
+.commit li:last-child{border-bottom:1px solid var(--line)}
+.commit li::before{content:"";position:absolute;left:4px;top:19px;width:12px;height:12px;border-radius:3px;background:var(--leaf);transform:rotate(45deg)}
+.commit b{font-family:var(--display);font-weight:600}
+.commit span{color:var(--muted);font-size:.95rem}
+@media (max-width:860px){.acct{grid-template-columns:1fr}}
+/* officials */
+.officials{background:var(--navy);color:var(--cream);padding-block:clamp(36px,6vw,56px)}
+.officials .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between}
+.officials h2{color:var(--cream)}
+.officials p{color:var(--cream-dim);margin-top:8px;max-width:58ch}
+.officials .eyebrow{color:#E7B85C}
+
 footer{background:var(--navy);color:var(--cream-dim);padding-block:36px;font-size:.92rem}
 footer .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center}
 footer .slogan{font-family:var(--display);color:var(--cream);font-weight:500;letter-spacing:.04em}
@@ -240,7 +286,7 @@ footer .slogan{font-family:var(--display);color:var(--cream);font-weight:500;let
     <a class="brand" href="#home"><img src="logo.webp" alt="">
       <span>a better tomorrow<small>.world</small></span></a>
     <nav class="nav" aria-label="Main">
-      <a href="#about">About</a><a href="#hub">The Hub</a><a href="#programs">Programs</a><a href="#tomorrow">Phase 2</a><a href="#leadership">Leadership</a><a href="#involved">Get Involved</a><a href="#contact">Contact</a>
+      <a href="#about">About</a><a href="#hub">The Hub</a><a href="#programs">Programs</a><a href="#tomorrow">Phase 2</a><a href="#county">For the County</a><a href="#leadership">Leadership</a><a href="#involved">Get Involved</a><a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -290,12 +336,27 @@ footer .slogan{font-family:var(--display);color:var(--cream);font-weight:500;let
   </div>
 </section>
 
+<section id="need" aria-labelledby="h-need">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Why Intercession City</p>
+      <h2 id="h-need">The need is real, and close to home</h2>
+      <p class="lede">Intercession City is a small, unincorporated community in Osceola County. Many of the services its families rely on are in Kissimmee and Poinciana, so bringing them to a local hub makes a real difference.</p>
+    </div>
+    <div class="need-grid">
+      <div class="stat"><span class="num">46%</span><b>of Osceola County households can't cover basic costs</b><p>11% live in poverty and another 35% are ALICE: working, but earning less than it costs to live in the county.</p><small>Heart of Florida United Way, ALICE data for 2023. <a href="https://www.hfuw.org/wp-content/uploads/2026/03/OsceolaCounty-2025reports-florida-2025.pdf" target="_blank" rel="noopener">Source</a></small></div>
+      <div class="stat"><span class="num">Top 4</span><b>Osceola has one of the highest food insecurity rates in the region</b><p>Among the seven counties Second Harvest Food Bank serves, rates are highest in Marion, Volusia, Osceola and Orange.</p><small>Second Harvest Food Bank of Central Florida, Map the Meal Gap, 2024 data. <a href="https://feedhopenow.org/our-work/hunger-in-central-florida/map-the-meal-gap-report/" target="_blank" rel="noopener">Source</a></small></div>
+      <div class="stat"><span class="num">1</span><b>vacant county building, already zoned for nonprofit service</b><p>1525 Immokalee St sits empty today. Its county land-use code, 7511, is already non-profit service, the exact use we propose.</p><small>Osceola County property record, parcel 33-25-28-3500-0019-0080.</small></div>
+    </div>
+  </div>
+</section>
+
 <section id="hub" class="band" aria-labelledby="h-hub">
   <div class="wrap hub">
     <div>
       <p class="eyebrow">The trunk</p>
       <h2 id="h-hub" style="margin-block:12px 20px">The Community Empowerment &amp; Re-entry Hub</h2>
-      <p>The county-owned modular building at 1525 Immokalee Street has sat vacant and overgrown. We have asked Osceola County to lease it to us for community use under Florida Statute § 125.38, which lets counties lease surplus property to nonprofits for a nominal fee.</p>
+      <p>The county-owned modular building at 1525 Immokalee Street has sat vacant. We have asked Osceola County to lease it to us for community use under Florida Statute § 125.38, which lets counties lease surplus property to nonprofits for a nominal fee.</p>
       <p>Our lead corporate partner, TPKBPRO Commercial Kitchen Installation, has committed its licensed crews to repair, paint, pressure-wash and landscape the building at no cost to the county. Programs open only after the building is fully restored.</p>
       <ol class="timeline" aria-label="Progress">
         <li class="done"><i></i><p><b>Articles of Incorporation issued</b><span>Florida Department of State, effective October 1, 2026</span></p></li>
@@ -319,6 +380,24 @@ footer .slogan{font-family:var(--display);color:var(--cream);font-weight:500;let
         <dt>Tomorrow</dt><dd>Gardens, tutoring rooms, food storage and benefits stations</dd>
       </dl>
     </div>
+  </div>
+</section>
+
+<section id="county" class="county" aria-labelledby="h-county">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">For Osceola County</p>
+      <h2 id="h-county">What the county gets</h2>
+      <p class="lede">Under Florida Statute § 125.38, the county can lease property it no longer needs to a not-for-profit corporation for a nominal fee. Here is what that lease delivers.</p>
+    </div>
+    <ul class="gets">
+      <li><span class="big">$0</span><b>Cost to the county</b><span>TPKBPRO's licensed crews and our volunteers restore the building at no cost to taxpayers.</span></li>
+      <li><span class="big">0</span><b>Maintenance burden</b><span>Ongoing upkeep of the building and grounds is carried by A Better Tomorrow World and its partners, not the county budget.</span></li>
+      <li><span class="big">7511</span><b>Use that matches the zoning</b><span>The parcel is already designated for non-profit service. Our plan puts it to exactly that use.</span></li>
+      <li><b>Blight turned into a community asset</b><span>A vacant building becomes a cared-for hub with gardens, painted walls and a maintained lot on a residential street.</span></li>
+      <li><b>Services for District 1 residents</b><span>Tutoring, food, senior delivery, benefits help and job pathways in Intercession City and Campbell City, without new county spending.</span></li>
+      <li><b>Trusted partners, not duplication</b><span>Established agencies reach residents through the hub, so existing public and nonprofit programs go further.</span></li>
+    </ul>
   </div>
 </section>
 
@@ -397,7 +476,7 @@ footer .slogan{font-family:var(--display);color:var(--cream);font-weight:500;let
     </div>
     <figure class="pledge">
       <blockquote>Change a life, change a family, change a community.</blockquote>
-      <figcaption>TPKBPRO Commercial Kitchen Installation is a social enterprise committed to hiring returning citizens and at-risk youth. As both organizations grow, TPKBPRO will be a direct employer for our graduates.</figcaption>
+      <figcaption>TPKBPRO Commercial Kitchen Installation is a social enterprise that, with the support of CareerSource Central Florida, is committed to hiring returning citizens and at-risk youth. As both organizations grow, TPKBPRO will be a direct employer for our graduates.</figcaption>
     </figure>
   </div>
 </section>
@@ -429,6 +508,36 @@ footer .slogan{font-family:var(--display);color:var(--cream);font-weight:500;let
   </div>
 </section>
 
+<section id="accountability" aria-labelledby="h-acct">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Accountability</p>
+      <h2 id="h-acct">Built to be trusted with a public building</h2>
+    </div>
+    <div class="acct">
+      <div>
+        <h3>Where we stand</h3>
+        <dl class="facts">
+          <div><dt>Florida not-for-profit corporation<br/><small style="color:var(--muted)">Document No. N26000013590</small></dt><dd><span class="pill ok">Active</span></dd></div>
+          <div><dt>Federal Employer ID (EIN)<br/><small style="color:var(--muted)">43-2336543</small></dt><dd><span class="pill ok">Issued</span></dd></div>
+          <div><dt>Florida charitable registration<br/><small style="color:var(--muted)">Dept. of Agriculture and Consumer Services</small></dt><dd><span class="pill wait">Submitted</span></dd></div>
+          <div><dt>IRS 501(c)(3) recognition</dt><dd><span class="pill wait">Pending</span></dd></div>
+        </dl>
+      </div>
+      <div>
+        <h3>How we govern</h3>
+        <ul class="commit">
+          <li><b>Unpaid volunteer board.</b> <span>All three directors serve without compensation.</span></li>
+          <li><b>Conflict-of-interest safeguards.</b> <span>A written separation-of-roles agreement means every decision involving TPKBPRO is made by the board's disinterested directors.</span></li>
+          <li><b>Financial controls.</b> <span>Dedicated accounts in the organization's name, two approvals for larger payments, and monthly review by the Treasurer.</span></li>
+          <li><b>Safety for the people we serve.</b> <span>Anyone working with youth or seniors will be background screened, and liability insurance will be in place before we occupy the building.</span></li>
+          <li><b>Public reporting.</b> <span>Annual IRS Form 990 and Florida charitable registration filings, available to anyone who asks.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="involved" aria-labelledby="h-involved">
   <div class="wrap">
     <div class="sec-head">
@@ -445,9 +554,20 @@ footer .slogan{font-family:var(--display);color:var(--cream);font-weight:500;let
     <div class="partners">
       <h3>Partners &amp; supporters</h3>
       <div class="partner-list">
-        <span>Adult Learning Center Osceola (ALCO)</span><span>AdventHealth Celebration</span><span>AMVETS Intercession City</span><span>CareerSource Central Florida</span><span>Church Acts 2:42</span><span>Heart of Florida United Way</span><span>Living Water Fellowship Food Pantry</span><span>National Commission for Health Education Credentialing</span><span>Osceola Chamber of Commerce</span><span>Osceola Technical College (oTECH)</span><span>Second Harvest Food Bank of Central Florida</span><span>TPKBPRO Commercial Kitchen Installation</span><span>U.S. Hunger</span><span>Valencia College Accelerated Skills Training</span>
+        <span>Adult Learning Center Osceola (ALCO)</span><span>AdventHealth Celebration</span><span>AMVETS Intercession City</span><span>CareerSource Central Florida</span><span>Church Acts 2:42</span><span>Heart of Florida United Way</span><span>Living Water Fellowship Food Pantry</span><span>Osceola Chamber of Commerce</span><span>Osceola Technical College (oTECH)</span><span>Second Harvest Food Bank of Central Florida</span><span>TPKBPRO Commercial Kitchen Installation</span><span>U.S. Hunger</span><span>Valencia College Accelerated Skills Training</span>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="officials" id="officials" aria-labelledby="h-off">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">For county officials</p>
+      <h2 id="h-off">Review our full lease request</h2>
+      <p>The complete proposal for 1525 Immokalee St, including the property data, both program phases, our partners and the § 125.38 pathway.</p>
+    </div>
+    <a class="btn btn-gold" href="files/ABTW-Lease-Request-1525-Immokalee-St.pdf" target="_blank" rel="noopener">Download the lease request (PDF)</a>
   </div>
 </section>
 
