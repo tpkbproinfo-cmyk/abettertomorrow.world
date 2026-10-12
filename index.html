@@ -297,6 +297,41 @@ section{padding-block:clamp(56px,8vw,96px)}
 @media (max-width:560px){.photos{grid-template-columns:1fr}}
 @media (max-width:860px){.scope ul{grid-template-columns:1fr}}
 
+/* mission */
+.mv{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.mv-card{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:14px;padding:24px;display:grid;gap:10px;align-content:start}
+.mv-card.v{border-top-color:var(--leaf)}
+.mv-card.v .eyebrow{color:var(--leaf)}
+.mv-card p:last-child{font-size:1.05rem}
+.today-h{margin:44px 0 18px}
+.today-h span{color:var(--gold);letter-spacing:.04em}
+.today{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.today li{display:grid;gap:10px;align-content:start;padding:18px;border-radius:14px;background:var(--paper);border:1px solid var(--line)}
+.today .tl{font-family:var(--display);font-weight:700;font-size:2.4rem;line-height:1;color:var(--leaf)}
+.today li:nth-child(2) .tl{color:var(--gold)}
+.today li:nth-child(3) .tl{color:var(--rust)}
+.today li:nth-child(4) .tl{color:var(--ink)}
+.today b{font-family:var(--display);font-weight:600;display:block;margin-bottom:4px;line-height:1.25}
+.today span:not(.tl){color:var(--muted);font-size:.92rem}
+@media (max-width:1000px){.today{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){.mv{grid-template-columns:1fr}}
+@media (max-width:520px){.today{grid-template-columns:1fr}}
+/* collaborations */
+.ctable{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.ctable table{width:100%;border-collapse:collapse;min-width:560px}
+.ctable th,.ctable td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line);vertical-align:top;font-size:.95rem}
+.ctable thead th{font-family:var(--display);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.ctable tbody th{font-family:var(--display);font-weight:600;white-space:nowrap}
+.ctable tbody tr:last-child th,.ctable tbody tr:last-child td{border-bottom:0}
+.ctable td:last-child{color:var(--muted)}
+.future{margin-top:36px}
+.future>p{color:var(--muted);margin-top:6px}
+.future ul{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 28px}
+.future li{padding:14px 0;border-top:1px solid var(--line);display:grid;gap:4px;align-content:start}
+.future b{font-family:var(--display);font-weight:600}
+.future span{color:var(--muted);font-size:.93rem}
+@media (max-width:860px){.future ul{grid-template-columns:1fr}}
+
 footer{background:var(--navy);color:var(--cream-dim);padding-block:36px;font-size:.92rem}
 footer .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center}
 footer .slogan{font-family:var(--display);color:var(--cream);font-weight:500;letter-spacing:.04em}
@@ -310,7 +345,7 @@ footer .slogan{font-family:var(--display);color:var(--cream);font-weight:500;let
     <a class="brand" href="#home"><img src="logo.webp" alt="">
       <span>a better tomorrow<small>.world</small></span></a>
     <nav class="nav" aria-label="Main">
-      <a href="#about">About</a><a href="#hub">The Hub</a><a href="#programs">Programs</a><a href="#tomorrow">Phase 2</a><a href="#county">For the County</a><a href="#leadership">Leadership</a><a href="#involved">Get Involved</a><a href="#contact">Contact</a>
+      <a href="#about">About</a><a href="#mission">Mission</a><a href="#hub">The Hub</a><a href="#programs">Programs</a><a href="#tomorrow">Phase 2</a><a href="#county">For the County</a><a href="#leadership">Leadership</a><a href="#involved">Get Involved</a><a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -357,6 +392,17 @@ footer .slogan{font-family:var(--display);color:var(--cream);font-weight:500;let
       <div><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="var(--leaf-soft)"/><path d="M20 10l2.6 5.6 6 .7-4.5 4.1 1.2 6-5.3-3-5.3 3 1.2-6-4.5-4.1 6-.7z" fill="var(--gold)"/></svg>
         <p><b>Student veterans</b><span>Tuition and fee coverage in exchange for mentoring local kids each week.</span></p></div>
     </div>
+  </div>
+</section>
+
+<section id="mission" class="band" aria-labelledby="h-mission">
+  <div class="wrap">
+    <div class="mv">
+      <div class="mv-card m"><p class="eyebrow">Our mission</p><p>Our mission is to foster upliftment in urban neighborhoods by empowering people with the qualifications to obtain high-earning jobs for their families, providing the resources needed to remove barriers and help further their potential. We stand up for our future leaders.</p></div>
+      <div class="mv-card v"><p class="eyebrow">Our vision</p><p>To better the lives of those who live in Osceola County by creating pride in our community. Our commitment is to facilitate economic achievement and give our young people the chance to become experts in the trades or entrepreneurs, leading to better family circumstances.</p></div>
+    </div>
+    <h2 id="h-mission" class="today-h">A better tomorrow starts <span>T.O.D.A.Y</span></h2>
+    <ul class="today"><li><span class="tl">T</span><div><b>Transforming Opportunities</b><span>Fostering sustainable career paths and economic self-sufficiency, aiming to break the cycle of poverty.</span></div></li><li><span class="tl">O</span><div><b>Overcoming Obstacles</b><span>Identifying the obstacles that keep our families from climbing out of poverty, and putting better solutions in place to remove them.</span></div></li><li><span class="tl">D</span><div><b>Delivering Direct Action</b><span>Transforming underused community assets into vibrant hubs of opportunity through swift, practical action.</span></div></li><li><span class="tl">A</span><div><b>Activating Alliances</b><span>Working with the public and private sectors to bring these initiatives to our community and lighten the load for our residents.</span></div></li><li><span class="tl">Y</span><div><b>Youth &amp; Intergenerational Leadership</b><span>Nurturing our youth through engaging, screen-free character development, strong academic support and dedicated mentorship by veterans.</span></div></li></ul>
   </div>
 </section>
 
@@ -475,20 +521,21 @@ footer .slogan{font-family:var(--display);color:var(--cream);font-weight:500;let
         <div style="display:grid;gap:12px;align-content:start">
           <p class="k">Youth · Veteran-led</p>
           <h3>Vanguard Scholars After-School Program</h3>
-          <p>We cover tuition and fees for student veterans at Valencia College and Osceola Technical College (oTECH), filling gaps the Post-9/11 GI Bill leaves or helping veterans whose benefits have run out. In return, each Vanguard Mentor gives 7 to 10 hours a week tutoring kids at the hub.</p>
+          <p>Modeled on UCF’s long-running Soldiers to Scholars program, we cover tuition and fees for student veterans at Valencia College and Osceola Technical College (oTECH), filling gaps the Post-9/11 GI Bill leaves or helping veterans whose benefits have run out. In return, each Vanguard Mentor gives 7 to 10 hours a week tutoring kids at the hub.</p>
         </div>
         <ul>
           <li>Daily reading, writing and math tutoring</li>
           <li>Travis Manion Foundation “Character Does Matter” lessons, taught face to face with no screens</li>
           <li>Every child eats a nutritious hot meal before going home</li>
+          <li>Families can enroll K–5 readers in New Worlds Reading’s free books-at-home program</li>
         </ul>
       </article>
-      <article class="prog"><p class="k">Families</p><h3>SNAP &amp; healthcare navigation</h3><p>Staffed computer stations where trained volunteers help families and returning citizens apply for SNAP, Medicaid and county health programs, without needing a ride across the county.</p></article>
-      <article class="prog"><p class="k">Food security</p><h3>Food &amp; crisis outreach</h3><p>With Second Harvest Food Bank of Central Florida and Living Water Fellowship Food Pantry, the hub serves as a local storage and pickup point for emergency food bags and nutrition boxes, closer to the families who need them.</p></article>
+      <article class="prog"><p class="k">Families</p><h3>SNAP &amp; healthcare navigation</h3><p>Staffed computer stations where trained volunteers help families and returning citizens apply for SNAP, Medicaid and county health programs, without needing a ride across the county. We intend to apply to become a Florida DCF ACCESS Community Partner site.</p></article>
+      <article class="prog"><p class="k">Food security</p><h3>Food &amp; crisis outreach</h3><p>With Second Harvest Food Bank of Central Florida, U.S. Hunger and Living Water Fellowship Food Pantry, the hub serves as a local storage and pickup point for emergency food bags and nutrition boxes, closer to the families who need them.</p></article>
       <article class="prog"><p class="k">Neighborhood · Veteran-led</p><h3>Operation Legacy service crews</h3><p>Veterans from AMVETS Intercession City lead youth, young adults and returning citizens in beautifying neighborhoods, painting seniors’ homes and pressure-washing properties. Crews also join seasonal cleanup days and honor fallen heroes at local cemeteries around Memorial Day.</p><p class="motto">If not me, then who…</p></article>
-      <article class="prog"><p class="k">Families</p><h3>Homeownership counseling</h3><p>NCHEC-certified counselors teach credit-building, budgeting and home-buying, step by step, so renters can become owners and build wealth that stays in the family.</p></article>
-      <article class="prog"><p class="k">Youth · Environment</p><h3>Youth horticulture &amp; science</h3><p>The land around the building becomes community gardens. Kids learn plant biology and environmental science while growing fresh produce for local families.</p></article>
-      <article class="prog"><p class="k">Seniors · Food security</p><h3>Senior food delivery: the last mile</h3><p>We aim to serve as the local last-mile partner for established senior meal and food programs. Our hub receives the food, and our volunteer drivers bring it to homebound seniors in Intercession City and Campbell City, so no neighbor is missed.</p></article>
+      <article class="prog"><p class="k">Families</p><h3>Homeownership counseling</h3><p>Counselors certified through the NeighborWorks Center for Homeownership Education and Counseling (NCHEC) teach credit-building, budgeting and home-buying, step by step, so renters can become owners and build wealth that stays in the family.</p></article>
+      <article class="prog"><p class="k">Youth · Environment</p><h3>Youth horticulture &amp; science</h3><p>The land around the building becomes community gardens. Kids learn plant biology and environmental science while growing fresh produce for local families, with UF/IFAS Osceola County Extension and 4-H as a natural partner.</p></article>
+      <article class="prog"><p class="k">Seniors · Food security</p><h3>Senior food delivery: the last mile</h3><p>We aim to serve as the local last-mile partner for established senior meal programs such as the Osceola Council on Aging’s Meals on Wheels. Our hub receives the food, and our volunteer drivers bring it to homebound seniors in Intercession City and Campbell City, so no neighbor is missed.</p></article>
     </div>
 
     <div class="seasons">
@@ -511,7 +558,7 @@ footer .slogan{font-family:var(--display);color:var(--cream);font-weight:500;let
       <p class="lede">As the hub’s families gain stability and our funding grows, we will open a larger site in the region, built with CareerSource Central Florida and the Osceola Chamber of Commerce. Phase 2 turns today’s volunteer programs into paid jobs and training for returning citizens, at-risk youth and their families.</p>
     </div>
     <div class="p2">
-      <article><h3>Adult upskilling &amp; trade academy</h3><p>Intensive, multi-week certification courses for adults, at-risk youth and returning citizens, connected directly to high-demand jobs with employers across Osceola and Orange counties. TPKBPRO will give our graduates first consideration for paid apprenticeships.</p>
+      <article><h3>Adult upskilling &amp; trade academy</h3><p>Intensive, multi-week certification courses for adults, at-risk youth and returning citizens, connected directly to high-demand jobs with employers across Osceola and Orange counties. TPKBPRO will give our graduates first consideration for paid apprenticeships, and we will guide graduates to credentials and scholarships such as ABC Central Florida craft training, MSSC logistics certifications and Mike Rowe WORKS Foundation trade scholarships.</p>
         <div class="trades"><span>Commercial kitchen installation</span><span>Welding</span><span>Refrigeration repair</span><span>HVAC</span></div></article>
       <article><h3>Affordable community daycare</h3><p>Parents can’t work or attend class without childcare they can afford. An on-site daycare removes that barrier so single parents and low-income families can train for, and keep, career-level jobs.</p></article>
       <article><h3>Paid work crews</h3><p>Our volunteer service crews grow into paid crews for landscaping, pressure-washing and property upkeep for local businesses, churches and property owners. Returning citizens and young adults earn a paycheck, trade experience and a reference that helps them land a higher-wage job.</p></article>
@@ -530,7 +577,7 @@ footer .slogan{font-family:var(--display);color:var(--cream);font-weight:500;let
     <div class="also">
       <h3>Also planned</h3>
       <ul>
-        <li><b>Re-entry support desk</b><span>Help getting IDs, birth certificates and driver’s licenses back, plus record-sealing and rights-restoration help through legal aid partners.</span></li>
+        <li><b>Re-entry support desk</b><span>Help getting IDs, birth certificates and driver’s licenses back, record-sealing and rights-restoration help through legal aid partners, and referrals to Valencia College’s YouthBuild program for young adults ages 17–24.</span></li>
         <li><b>Job &amp; training shuttle</b><span>A shuttle bus running twice a day to SunRail, Valencia College Poinciana, the Adult Learning Center Osceola (ALCO) and oTECH Poinciana, so neighbors without reliable transportation can get to jobs and training.</span></li>
         <li><b>Paid delivery &amp; logistics roles</b><span>Senior food routes grow into paid driver, packing and warehouse jobs that build toward forklift and CDL credentials.</span></li>
         <li><b>Small business starts</b><span>A market stand for garden produce and coaching for neighbors starting their own crew, food or trade business.</span></li>
@@ -596,6 +643,25 @@ footer .slogan{font-family:var(--display);color:var(--cream);font-weight:500;let
           <li><b>Public reporting.</b> <span>Annual IRS Form 990 and Florida charitable registration filings, available to anyone who asks.</span></li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="collaborations" aria-labelledby="h-collab">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Activating alliances</p>
+      <h2 id="h-collab">Partners we plan to bring to the hub</h2>
+      <p class="lede">Following our last-mile approach, we vetted established programs that already do this work well. These collaborations are in development and are not yet formal agreements.</p>
+    </div>
+    <div class="ctable"><table>
+      <thead><tr><th scope="col">Area</th><th scope="col">Organization</th><th scope="col">Role at the hub</th></tr></thead>
+      <tbody><tr><th scope="row">Seniors</th><td>Osceola Council on Aging</td><td>Last-mile staging and delivery of Meals on Wheels to Intercession City and Campbell City</td></tr><tr><th scope="row">Veteran mentoring</th><td>Travis Manion Foundation; UCF Soldiers to Scholars</td><td>Character Does Matter curriculum and the proven model for Vanguard Scholars</td></tr><tr><th scope="row">Youth</th><td>New Worlds Reading; Junior Achievement of Central Florida; Take Stock in Children; HAPCO Music Foundation; UF/IFAS Osceola 4-H</td><td>Literacy, financial literacy, scholarships and mentoring, arts and culinary programs, and youth gardening</td></tr><tr><th scope="row">Re-entry</th><td>Valencia College YouthBuild; Florida Department of Corrections Bureau of Re-entry; Federal Bonding Program</td><td>GED and job training referrals, a local re-entry resource point, and free fidelity bonds for employers</td></tr><tr><th scope="row">Housing</th><td>NeighborWorks America (NCHEC)</td><td>Certification and training for homeownership counselors</td></tr><tr><th scope="row">Recreation</th><td>Boys &amp; Girls Clubs of Central Florida</td><td>A future club site toward our goal of a recreation center in Intercession City</td></tr></tbody>
+    </table></div>
+    <div class="future">
+      <h3>Future programs we hope to welcome</h3>
+      <p>As the hub grows and resources allow, each would add opportunity without duplicating work done well elsewhere.</p>
+      <ul><li><b>Youth sports &amp; leadership</b><span>3D Institute; Youth on Course; USTA youth tennis; CAST for Kids</span></li><li><b>Youth arts</b><span>United Arts of Central Florida; Dr. Phillips Center education programs; Florida Symphony Youth Orchestras</span></li><li><b>Veterans</b><span>PGA HOPE; Valencia College Veterans Affairs; chartering an AMVETS post in Intercession City</span></li><li><b>College access</b><span>Florida College System Foundation scholarships</span></li><li><b>Literacy &amp; early childhood</b><span>YMCA of Central Florida; The Children’s Movement of Florida</span></li><li><b>Workforce</b><span>Second Harvest Food Bank career pathways; Jails to Jobs resources</span></li></ul>
     </div>
   </div>
 </section>
