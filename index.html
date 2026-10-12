@@ -332,6 +332,15 @@ section{padding-block:clamp(56px,8vw,96px)}
 .future span{color:var(--muted);font-size:.93rem}
 @media (max-width:860px){.future ul{grid-template-columns:1fr}}
 
+.gate{display:grid;gap:8px;min-width:0;width:min(100%,360px)}
+.gate label{font-family:var(--display);font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#E7B85C}
+.gate-row{display:flex;gap:8px;flex-wrap:wrap}
+.gate input{flex:1 1 180px;min-width:0;font:inherit;padding:11px 14px;border-radius:999px;border:1px solid rgba(245,239,223,.35);background:rgba(245,239,223,.08);color:var(--cream)}
+.gate input:focus-visible{outline:3px solid #E7B85C;outline-offset:2px}
+.gate-msg{margin:0;min-height:1.2em;font-size:.9rem;color:#F2A27A}
+.gate-msg.ok{color:#BFD77A}
+.gate-note{margin:0;font-size:.85rem;color:var(--cream-dim)}
+
 footer{background:var(--navy);color:var(--cream-dim);padding-block:36px;font-size:.92rem}
 footer .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center}
 footer .slogan{font-family:var(--display);color:var(--cream);font-weight:500;letter-spacing:.04em}
@@ -693,9 +702,18 @@ footer .slogan{font-family:var(--display);color:var(--cream);font-weight:500;let
     <div>
       <p class="eyebrow">For county officials</p>
       <h2 id="h-off">Review our full lease request</h2>
-      <p>The complete proposal for 1525 Immokalee St, including the property data, both program phases, our partners and the § 125.38 pathway.</p>
+      <p>The complete proposal for 1525 Immokalee St, including the property data, both program phases, our partners and the § 125.38 pathway. Access is limited to county officials; enter the password provided by our office.</p>
     </div>
-    <a class="btn btn-gold" href="files/ABTW-Lease-Request-1525-Immokalee-St.pdf" target="_blank" rel="noopener">Download the lease request (PDF)</a>
+    <form class="gate" id="gate" autocomplete="off">
+      <label for="gate-pw">Password</label>
+      <div class="gate-row">
+        <input id="gate-pw" name="gate-pw" type="password" required autocomplete="off" spellcheck="false">
+        <button class="btn btn-gold" type="submit">Unlock</button>
+      </div>
+      <p class="gate-msg" id="gate-msg" role="status" aria-live="polite"></p>
+      <a class="btn btn-gold" id="gate-link" href="#" target="_blank" rel="noopener" hidden>Download the lease request (PDF)</a>
+      <p class="gate-note" id="gate-note" hidden>The PDF is also password-protected. Use the same password to open it.</p>
+    </form>
   </div>
 </section>
 
@@ -734,5 +752,27 @@ document.querySelectorAll('.copy').forEach(function(b){
 });
 </script>
 
+
+<script>
+(function(){
+  var H='4f7dc7431f4f95acd6533d914706093e5c9d8164db51c72cb2fb8a143af7bffa';
+  var form=document.getElementById('gate'); if(!form) return;
+  var input=document.getElementById('gate-pw'), msg=document.getElementById('gate-msg'),
+      link=document.getElementById('gate-link'), note=document.getElementById('gate-note');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!(window.crypto&&crypto.subtle)){msg.className='gate-msg';msg.textContent='Your browser cannot unlock this file. Please contact our office.';return;}
+    crypto.subtle.digest('SHA-256',new TextEncoder().encode(input.value)).then(function(buf){
+      var hex=Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,'0')}).join('');
+      if(hex===H){
+        link.href='files/lease-request-'+hex.slice(0,20)+'.pdf';
+        link.hidden=false; note.hidden=false; msg.className='gate-msg ok'; msg.textContent='Unlocked.';
+      }else{
+        link.hidden=true; note.hidden=true; msg.className='gate-msg'; msg.textContent='That password is not correct. Passwords are case-sensitive.';
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
